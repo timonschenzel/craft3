@@ -1,0 +1,39 @@
+{
+    "name": "aenmsubscription/subscription",
+    "description": "Subscription",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "subscription"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Timon",
+            "homepage": "craft.test"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "aenmsubscription\\subscription\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Subscription",
+        "handle": "subscription",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "???",
+        "components": {
+            "subscriptionService": "aenmsubscription\\subscription\\services\\SubscriptionService"
+        },
+        "class": "aenmsubscription\\subscription\\Subscription"
+    }
+}

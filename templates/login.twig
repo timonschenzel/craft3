@@ -1,0 +1,42 @@
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+<div class="flex h-screen items-center justify-center">
+    <div>
+        <form method="post" accept-charset="UTF-8">
+            {{ csrfInput() }}
+            {{ actionInput('users/login') }}
+
+            <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
+                <div class="mb-4">
+                    <label class="block text-grey-800 text-sm font-bold mb-2" for="username">
+                        Username or email
+                    </label>
+                    <input required class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-800" id="username" type="text" placeholder="Username" name="loginName">
+                    </div>
+                    <div class="mb-4">
+                    <label class="block text-grey-800 text-sm font-bold mb-2" for="password">
+                        Password
+                    </label>
+                    <input required class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-800" id="password" type="password" placeholder="******************" name="password">
+                    </div>
+
+                    <label class="mb-4">
+                        <input type="checkbox" name="rememberMe" value="1">
+                        Remember me
+                    </label>
+
+                    <div class="flex items-center justify-between">
+                    <input type="submit" value="Sign In" class="bg-blue-500 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded" type="button">
+
+                    <a class="inline-block align-baseline font-bold text-sm text-blue hover:text-blue-800 ml-2" href="{{ url('forgotpassword') }}">
+                        Forgot Password?
+                    </a>
+                </div>
+                
+                {% if errorMessage is defined %}
+                    <p class="text-red-500 mt-2">{{ errorMessage }}</p>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+</div>
